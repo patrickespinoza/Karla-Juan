@@ -1,107 +1,130 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { Church, MapPin, PartyPopper } from "lucide-react";
 
-const Celebracion = ({
-  dia,
-  fecha,
-  mesAnio,
-  hora,
-  lugar,
-  direccion,
-  ubicacion,
-  titulo,
-}) => {
+const ubicaciones = [
+  {
+    tipo: "Ceremonia religiosa",
+    hora: "1:00 p. m.",
+    lugar: "Iglesia Sagrado Corazón de Jesús",
+    direccion:
+      "Plan de Tuxtepec 798A, 5 de Mayo, 68373 San Juan Bautista Tuxtepec, Oax.",
+    enlace: "https://maps.app.goo.gl/1CWoybWnFPsyMM8b7",
+    icono: Church,
+  },
+  {
+    tipo: "Recepción",
+    hora: "2:00 p. m.",
+    lugar: "Terraza La Canuta",
+    direccion: "C. 10 de Abril, 68446 San Bartolo, Oax.",
+    enlace: "https://maps.app.goo.gl/ZFAqWsymHLeVSDBq6",
+    icono: PartyPopper,
+  },
+];
+
+const Celebracion = () => {
   return (
-    <div className="w-full bg-[#5E6650] py-20 px-6 flex flex-col items-center justify-center">
+    <section className="w-full overflow-hidden bg-[#FFFCF7] px-5 py-20 text-[#302C27] sm:px-8 sm:py-28">
+      <div className="mx-auto max-w-5xl text-center">
+        <motion.p
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="text-[11px] uppercase tracking-[0.28em] text-[#806D55] sm:text-xs"
+        >
+          Sábado 05 de diciembre de 2026
+        </motion.p>
 
-      {/* FECHA */}
-      <div className="text-center mb-10">
+        <motion.h2
+          initial={{ opacity: 0, y: 22 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="mt-5 text-[clamp(2.6rem,9vw,4.5rem)] leading-tight tracking-[-0.05em]"
+          style={{ fontFamily: '"Bodoni Moda", Georgia, serif' }}
+        >
+          Dónde celebraremos
+        </motion.h2>
 
-        <p className="text-[#E7D7B1] tracking-[0.35em] uppercase text-sm sm:text-base font-semibold">
-          {dia}
-        </p>
+        <div
+          className="mx-auto my-10 h-px w-20 bg-[#BDA889]"
+          aria-hidden="true"
+        />
 
-        <h1 className="text-7xl sm:text-8xl font-playfair text-[#F7F4ED] leading-none mt-3 drop-shadow-lg">
-          {fecha}
-        </h1>
+        <div className="grid gap-6 md:grid-cols-2">
+          {ubicaciones.map((ubicacion, index) => {
+            const Icono = ubicacion.icono;
 
-        <p className="text-[#E7D7B1] text-2xl sm:text-3xl tracking-[0.2em] mt-3">
-          {mesAnio}
-        </p>
+            return (
+              <motion.article
+                key={ubicacion.tipo}
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.8, delay: index * 0.15 }}
+                className="relative flex h-full flex-col items-center border border-[#D8C7AD] bg-[#F8F3EA] px-6 py-12 sm:px-10"
+              >
+                <div
+                  className="pointer-events-none absolute inset-3 border border-[#E9DDCC]"
+                  aria-hidden="true"
+                />
 
-      </div>
+                <div className="relative z-10 flex h-full w-full flex-col items-center">
+                  <Icono
+                    size={30}
+                    strokeWidth={1.3}
+                    className="text-[#AA9578]"
+                    aria-hidden="true"
+                  />
 
-      {/* TARJETA */}
-      <div
-        className="
-          relative bg-[#F7F4ED] max-w-xl w-full p-10 sm:p-14
-          shadow-[0_15px_50px_rgba(0,0,0,0.25)]
-          border border-[#d8cfbf]
+                  <p className="mt-7 text-[11px] uppercase tracking-[0.22em] text-[#806D55]">
+                    {ubicacion.tipo}
+                  </p>
 
-          rounded-tl-[4rem]
-          rounded-br-[4rem]
-          rounded-tr-[0.8rem]
-          rounded-bl-[0.8rem]
-        "
-      >
+                  <p
+                    className="mt-3 text-3xl text-[#302C27]"
+                    style={{ fontFamily: '"Bodoni Moda", Georgia, serif' }}
+                  >
+                    {ubicacion.hora}
+                  </p>
 
-        <div className="absolute top-5 left-1/2 -translate-x-1/2 w-28 h-[2px] bg-[#B89B5E]"></div>
+                  <div
+                    className="my-6 h-px w-12 bg-[#BDA889]"
+                    aria-hidden="true"
+                  />
 
-        <div className="text-center space-y-3">
+                  <h3
+                    className="text-2xl leading-snug sm:text-[1.8rem]"
+                    style={{ fontFamily: '"Bodoni Moda", Georgia, serif' }}
+                  >
+                    {ubicacion.lugar}
+                  </h3>
 
-          <h2 className="text-3xl sm:text-4xl font-playfair text-black tracking-wide">
-            {titulo}
-          </h2>
+                  <p
+                    className="mt-4 max-w-xs text-lg leading-relaxed text-[#625A50]"
+                    style={{ fontFamily: '"EB Garamond", Georgia, serif' }}
+                  >
+                    {ubicacion.direccion}
+                  </p>
 
-          <div className="w-20 h-[2px] mx-auto bg-[#B89B5E]"></div>
-
+                  <a
+                    href={ubicacion.enlace}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-8 inline-flex items-center justify-center gap-2 border border-[#806D55] px-6 py-3 text-xs uppercase tracking-[0.16em] text-[#574A3B] transition-colors hover:bg-[#806D55] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#806D55]"
+                    aria-label={`Ver ubicación de ${ubicacion.lugar} en Google Maps`}
+                  >
+                    <MapPin size={15} strokeWidth={1.7} />
+                    Ver ubicación
+                  </a>
+                </div>
+              </motion.article>
+            );
+          })}
         </div>
-
-        <div className="mt-10 flex flex-col items-center text-center space-y-6">
-
-          <div>
-            <p className="text-[#B89B5E] uppercase tracking-[0.25em] text-sm">
-              Hora
-            </p>
-
-            <p className="text-2xl font-cursiveDancing text-black mt-2">
-              {hora}
-            </p>
-          </div>
-
-          <div>
-
-            <p className="text-[#B89B5E] uppercase tracking-[0.25em] text-sm">
-              Lugar
-            </p>
-
-            <p className="text-2xl font-cursiveDancing text-black mt-2">
-              {lugar}
-            </p>
-
-            <p className="text-black/70 mt-3 leading-relaxed text-sm sm:text-base max-w-md">
-              {direccion}
-            </p>
-
-          </div>
-
-          <a
-            href={ubicacion}
-            target="_blank"
-            rel="noreferrer"
-            className="
-              mt-4 bg-[#B89B5E] hover:scale-105 transition duration-300
-              text-white px-8 py-3 rounded-full shadow-lg tracking-wide
-            "
-          >
-            Ver Ubicación
-          </a>
-
-        </div>
-
-        <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-28 h-[2px] bg-[#B89B5E]"></div>
-
       </div>
-    </div>
+    </section>
   );
 };
 

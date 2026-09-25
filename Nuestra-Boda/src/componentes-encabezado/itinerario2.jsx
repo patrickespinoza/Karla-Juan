@@ -1,198 +1,169 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+const eventos = [
+  {
+    hora: "13:00 h",
+    titulo: "Ceremonia religiosa",
+    lugar: "Parroquia El Sagrado Corazón de Jesús",
+    descripcion:
+      "Comenzamos este día dando gracias por nuestra familia y por las bendiciones que nos han permitido llegar hasta aquí.",
+  },
+  {
+    hora: "14:00 h",
+    titulo: "Recepción",
+    lugar: "La Canuta Terraza",
+    descripcion:
+      "Abrimos las puertas para recibirte y comenzar juntos esta celebración.",
+  },
+  {
+    hora: "15:00 h",
+    titulo: "Comida & convivencia",
+    descripcion:
+      "Una mesa para compartir, conversar y disfrutar de los sabores que hemos preparado con cariño.",
+  },
+  {
+    hora: "16:00 h",
+    titulo: "Momentos para recordar",
+    descripcion:
+      "Fotografías con nuestra pequeña Alessa, animación para los niños y el tradicional bolo del padrino.",
+  },
+  {
+    hora: "17:00 h",
+    titulo: "¡5 años de Imanol! 🎂",
+    descripcion:
+      "Celebramos la vida de nuestro pequeño con piñatas, juegos y mucha diversión para grandes y pequeños.",
+  },
+  {
+    hora: "19:00 h",
+    titulo: "La hora de los novios 🥂",
+    descripcion:
+      "Es momento de celebrar el amor. Baile, brindis, música y alegría para compartir contigo esta nueva etapa de nuestra historia.",
+  },
+];
+
+const animacion = {
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.15 },
+};
+
 const Itinerario2 = () => {
-  const containerFade = {
-    hidden: { opacity: 0, y: 40 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.9,
-        ease: [0.22, 1, 0.36, 1],
-      },
-    },
-  };
-
-  const cardFade = {
-    hidden: {
-      opacity: 0,
-      y: 35,
-      scale: 0.96,
-      filter: "blur(6px)",
-    },
-    show: (index) => ({
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      filter: "blur(0px)",
-      transition: {
-        duration: 0.75,
-        delay: index * 0.14,
-        ease: [0.22, 1, 0.36, 1],
-      },
-    }),
-  };
-
-  const eventosIzquierda = [
-    {
-      titulo: "Fotografías",
-      imagen: "/camara-fotografica.png",
-      hora: "4:00 pm - 4:30 pm",
-    },
-    {
-      titulo: "Comida",
-      imagen: "/cena-romantica.png",
-      hora: "5:00 pm - 6:00 pm",
-    },
-    {
-      titulo: "Baile",
-      imagen: "/bola-de-disco.png",
-      hora: "6:30 pm - 11:30 pm",
-    },
-  ];
-
-  const eventosDerecha = [
-    {
-      titulo: "Llegada de Novios",
-      imagen: "/arco-de-la-boda.png",
-      hora: "4:30 pm - 5:00 pm",
-    },
-    {
-      titulo: "Pastel",
-      imagen: "/pastel.png",
-      hora: "6:00 pm - 6:30 pm",
-    },
-  ];
-
   return (
-    <div className="w-full bg-[#F7F4ED] py-0 px-0 flex items-center justify-center overflow-hidden">
-      <motion.div
-        variants={containerFade}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true, amount: 0.2 }}
-        className="
-          max-w-6xl mx-auto
-          bg-[#F7F4ED]
-          rounded-tl-[4rem]
-          rounded-br-[4rem]
-          rounded-tr-[1rem]
-          rounded-bl-[1rem]
-          shadow-[0_15px_50px_rgba(0,0,0,0.2)]
-          p-10 sm:p-16
-        "
-      >
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.8,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          viewport={{ once: true }}
+    <section className="w-full overflow-hidden bg-[#F8F3EA] px-5 py-20 text-[#302C27] sm:px-8 sm:py-28">
+      <div className="mx-auto max-w-4xl">
+        <motion.header
+          {...animacion}
+          transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <p className="uppercase tracking-[0.25em] text-[#B89B5E] text-sm font-semibold">
-            Nuestro Día
+          <p className="text-[11px] uppercase tracking-[0.25em] text-[#806D55] sm:text-xs">
+            ✨ Un día para celebrar
           </p>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-playfair text-black mt-4">
+          <h2
+            className="mt-5 text-[clamp(2.7rem,9vw,4.5rem)] leading-tight tracking-[-0.05em]"
+            style={{ fontFamily: '"Bodoni Moda", Georgia, serif' }}
+          >
             Itinerario
-          </h1>
+          </h2>
 
-          <div className="w-24 h-[2px] bg-[#B89B5E] mx-auto mt-6"></div>
-        </motion.div>
+          <div
+            className="mx-auto mt-8 h-px w-20 bg-[#BDA889]"
+            aria-hidden="true"
+          />
+        </motion.header>
 
-        <div className="relative mt-20">
-          <div className="hidden md:block absolute left-1/2 top-0 h-full w-[3px] bg-[#B89B5E]/40 -translate-x-1/2"></div>
+        <div className="relative mx-auto mt-14 max-w-2xl sm:mt-20">
+          {/* Línea continua del itinerario */}
+          <div
+            className="absolute bottom-10 left-[6px] top-3 w-px bg-[#D8C7AD] sm:left-[91px]"
+            aria-hidden="true"
+          />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-14">
-            <div className="flex flex-col gap-14">
-              {eventosIzquierda.map((evento, index) => (
-                <motion.div
-                  key={index}
-                  custom={index}
-                  variants={cardFade}
-                  initial="hidden"
-                  whileInView="show"
-                  viewport={{ once: true, amount: 0.35 }}
-                  whileHover={{
-                    y: -6,
-                    scale: 1.015,
-                    transition: { duration: 0.25 },
-                  }}
-                  className="
-                    bg-white/70
-                    backdrop-blur-md
-                    rounded-3xl
-                    p-6
-                    shadow-lg
-                    border border-[#E6DDCF]
-                    text-center
-                  "
+          <div className="space-y-9 sm:space-y-12">
+            {eventos.map((evento, index) => (
+              <motion.article
+                key={evento.hora}
+                {...animacion}
+                transition={{ duration: 0.7, delay: Math.min(index * 0.07, 0.25) }}
+                className="relative grid grid-cols-[20px_minmax(0,1fr)] gap-4 sm:grid-cols-[76px_20px_minmax(0,1fr)] sm:gap-5"
+              >
+                {/* Hora lateral en pantallas grandes */}
+                <span
+                  className="hidden pt-1 text-right text-lg text-[#806D55] sm:block"
+                  style={{ fontFamily: '"Bodoni Moda", Georgia, serif' }}
                 >
-                  <img
-                    src={evento.imagen}
-                    alt={evento.titulo}
-                    className="h-20 w-20 md:h-24 md:w-24 mx-auto"
-                  />
+                  {evento.hora}
+                </span>
 
-                  <h2 className="mt-5 text-2xl font-playfair text-black">
-                    {evento.titulo}
-                  </h2>
+                {/* Punto sobre la línea */}
+                <span
+                  className="relative z-10 mt-2 h-[13px] w-[13px] rounded-full border-[3px] border-[#F8F3EA] bg-[#AA9578] ring-1 ring-[#AA9578]"
+                  aria-hidden="true"
+                />
 
-                  <p className="mt-3 text-[#B89B5E] font-[DancingScript] text-xl">
+                <div className="border border-[#E6DACA] bg-[#FFFCF7] px-5 py-6 shadow-[0_10px_30px_rgba(70,55,37,0.04)] sm:px-8 sm:py-8">
+                  {/* Hora dentro de la tarjeta en celular */}
+                  <p
+                    className="text-lg text-[#806D55] sm:hidden"
+                    style={{ fontFamily: '"Bodoni Moda", Georgia, serif' }}
+                  >
                     {evento.hora}
                   </p>
-                </motion.div>
-              ))}
-            </div>
 
-            <div className="flex flex-col gap-14 md:mt-20">
-              {eventosDerecha.map((evento, index) => (
-                <motion.div
-                  key={index}
-                  custom={index + eventosIzquierda.length}
-                  variants={cardFade}
-                  initial="hidden"
-                  whileInView="show"
-                  viewport={{ once: true, amount: 0.35 }}
-                  whileHover={{
-                    y: -6,
-                    scale: 1.015,
-                    transition: { duration: 0.25 },
-                  }}
-                  className="
-                    bg-white/70
-                    backdrop-blur-md
-                    rounded-3xl
-                    p-6
-                    shadow-lg
-                    border border-[#E6DDCF]
-                    text-center
-                  "
-                >
-                  <img
-                    src={evento.imagen}
-                    alt={evento.titulo}
-                    className="h-20 w-20 md:h-24 md:w-24 mx-auto"
-                  />
-
-                  <h2 className="mt-5 text-2xl font-playfair text-black">
+                  <h3
+                    className="mt-2 text-[1.65rem] leading-snug sm:mt-0 sm:text-[1.9rem]"
+                    style={{ fontFamily: '"Bodoni Moda", Georgia, serif' }}
+                  >
                     {evento.titulo}
-                  </h2>
+                  </h3>
 
-                  <p className="mt-3 text-[#B89B5E] font-[DancingScript] text-xl">
-                    {evento.hora}
+                  {evento.lugar && (
+                    <p className="mt-2 text-lg italic text-[#806D55]">
+                      {evento.lugar}
+                    </p>
+                  )}
+
+                  <p
+                    className="mt-3 text-lg leading-relaxed text-[#625A50] sm:text-xl"
+                    style={{ fontFamily: '"EB Garamond", Georgia, serif' }}
+                  >
+                    {evento.descripcion}
                   </p>
-                </motion.div>
-              ))}
-            </div>
+                </div>
+              </motion.article>
+            ))}
           </div>
         </div>
-      </motion.div>
-    </div>
+
+        <motion.div
+          {...animacion}
+          transition={{ duration: 0.8 }}
+          className="mx-auto mt-20 max-w-xl text-center"
+        >
+          <div
+            className="mx-auto mb-8 h-px w-20 bg-[#BDA889]"
+            aria-hidden="true"
+          />
+
+          <h3
+            className="text-2xl sm:text-3xl"
+            style={{ fontFamily: '"Bodoni Moda", Georgia, serif' }}
+          >
+            🤍 Gracias por celebrar con nosotros
+          </h3>
+
+          <p
+            className="mt-5 text-xl leading-relaxed text-[#625A50] sm:text-2xl"
+            style={{ fontFamily: '"EB Garamond", Georgia, serif' }}
+          >
+            Porque los momentos más importantes de la vida se vuelven aún más
+            especiales cuando los compartimos con las personas que amamos.
+          </p>
+        </motion.div>
+      </div>
+    </section>
   );
 };
 
