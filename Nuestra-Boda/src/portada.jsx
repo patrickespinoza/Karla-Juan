@@ -16,27 +16,31 @@ export default function Portada() {
         style={{ borderColor: "#846B4F" }}
         aria-hidden="true"
       />
+
       <div
         className="pointer-events-none absolute inset-7 border sm:inset-10"
         style={{ borderColor: "rgba(92, 69, 46, 0.65)" }}
         aria-hidden="true"
       />
 
-      <div className="relative z-10 flex w-full max-w-2xl flex-col items-center">
+      <div className="relative z-10 flex w-full max-w-3xl flex-col items-center">
         <h1
-          className="w-full text-[clamp(2.7rem,10vw,6.2rem)] leading-[1.2] tracking-[-0.055em]"
-          style={{ fontFamily: '"Bodoni Moda", Georgia, serif' }}
+          className="w-full text-[clamp(3.4rem,12vw,7.5rem)] font-normal leading-[1.25]"
+          style={{
+            fontFamily: '"Great Vibes", cursive',
+            color: "#171512",
+          }}
         >
-          <span className="block italic">Karla Roset</span>
+          <span className="block">Karla Roset</span>
 
           <span
-            className="my-2 block text-[0.65em] italic"
+            className="my-1 block text-[0.72em]"
             style={{ color: "#60482F" }}
           >
             &
           </span>
 
-          <span className="block italic">Juan Alejandro</span>
+          <span className="block">Juan Alejandro</span>
         </h1>
 
         <div

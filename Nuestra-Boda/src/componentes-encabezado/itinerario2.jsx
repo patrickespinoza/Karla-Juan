@@ -28,12 +28,12 @@ const eventos = [
     descripcion:
       "Fotografías con nuestra pequeña Alessa, animación para los niños y el tradicional bolo del padrino.",
   },
-  {
-    hora: "17:00 h",
-    titulo: "¡5 años de Imanol! 🎂",
-    descripcion:
-      "Celebramos la vida de nuestro pequeño con piñatas, juegos y mucha diversión para grandes y pequeños.",
-  },
+{
+  hora: "17:00 h",
+  titulo: "¡5 años de Imanol y bautizo de Danielle Alessa! 🎂",
+  descripcion:
+    "Celebramos los 5 años de Imanol y el bautizo de Danielle Alessa con piñatas, juegos y mucha diversión para grandes y pequeños.",
+},
   {
     hora: "19:00 h",
     titulo: "La hora de los novios 🥂",

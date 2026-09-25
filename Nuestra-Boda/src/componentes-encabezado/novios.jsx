@@ -26,8 +26,8 @@ const Novios = () => {
           </p>
 
           <h2
-            className="mt-5 text-[clamp(2.3rem,8vw,4rem)] italic leading-tight tracking-[-0.05em] text-[#171512]"
-            style={{ fontFamily: '"Bodoni Moda", Georgia, serif' }}
+            className="mt-8 text-[clamp(2.8rem,9vw,5rem)] font-normal leading-[1.2] text-[#171512]"
+            style={{ fontFamily: '"Great Vibes", cursive' }}
           >
             Con la bendición de
             <br />
