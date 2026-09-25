@@ -50,26 +50,26 @@ const animacion = {
 
 const Itinerario2 = () => {
   return (
-    <section className="w-full overflow-hidden bg-[#F8F3EA] px-5 py-20 text-[#302C27] sm:px-8 sm:py-28">
+    <section className="w-full overflow-hidden bg-[#F5EDE1] px-5 py-20 text-[#171512] sm:px-8 sm:py-28">
       <div className="mx-auto max-w-4xl">
         <motion.header
           {...animacion}
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <p className="text-[11px] uppercase tracking-[0.25em] text-[#806D55] sm:text-xs">
+          <p className="text-[11px] uppercase tracking-[0.25em] text-[#60482F] sm:text-xs">
             ✨ Un día para celebrar
           </p>
 
           <h2
-            className="mt-5 text-[clamp(2.7rem,9vw,4.5rem)] leading-tight tracking-[-0.05em]"
+            className="mt-5 text-[clamp(2.7rem,9vw,4.5rem)] leading-tight tracking-[-0.05em] text-[#171512]"
             style={{ fontFamily: '"Bodoni Moda", Georgia, serif' }}
           >
             Itinerario
           </h2>
 
           <div
-            className="mx-auto mt-8 h-px w-20 bg-[#BDA889]"
+            className="mx-auto mt-8 h-px w-20 bg-[#60482F]"
             aria-hidden="true"
           />
         </motion.header>
@@ -77,7 +77,7 @@ const Itinerario2 = () => {
         <div className="relative mx-auto mt-14 max-w-2xl sm:mt-20">
           {/* Línea continua del itinerario */}
           <div
-            className="absolute bottom-10 left-[6px] top-3 w-px bg-[#D8C7AD] sm:left-[91px]"
+            className="absolute bottom-10 left-[6px] top-3 w-px bg-[#846B4F] sm:left-[91px]"
             aria-hidden="true"
           />
 
@@ -86,12 +86,15 @@ const Itinerario2 = () => {
               <motion.article
                 key={evento.hora}
                 {...animacion}
-                transition={{ duration: 0.7, delay: Math.min(index * 0.07, 0.25) }}
+                transition={{
+                  duration: 0.7,
+                  delay: Math.min(index * 0.07, 0.25),
+                }}
                 className="relative grid grid-cols-[20px_minmax(0,1fr)] gap-4 sm:grid-cols-[76px_20px_minmax(0,1fr)] sm:gap-5"
               >
                 {/* Hora lateral en pantallas grandes */}
                 <span
-                  className="hidden pt-1 text-right text-lg text-[#806D55] sm:block"
+                  className="hidden pt-1 text-right text-lg font-medium text-[#60482F] sm:block"
                   style={{ fontFamily: '"Bodoni Moda", Georgia, serif' }}
                 >
                   {evento.hora}
@@ -99,34 +102,34 @@ const Itinerario2 = () => {
 
                 {/* Punto sobre la línea */}
                 <span
-                  className="relative z-10 mt-2 h-[13px] w-[13px] rounded-full border-[3px] border-[#F8F3EA] bg-[#AA9578] ring-1 ring-[#AA9578]"
+                  className="relative z-10 mt-2 h-[13px] w-[13px] rounded-full border-[3px] border-[#F5EDE1] bg-[#60482F] ring-1 ring-[#60482F]"
                   aria-hidden="true"
                 />
 
-                <div className="border border-[#E6DACA] bg-[#FFFCF7] px-5 py-6 shadow-[0_10px_30px_rgba(70,55,37,0.04)] sm:px-8 sm:py-8">
+                <div className="border border-[#846B4F] bg-[#FFFEFB] px-5 py-6 shadow-[0_10px_30px_rgba(70,55,37,0.08)] sm:px-8 sm:py-8">
                   {/* Hora dentro de la tarjeta en celular */}
                   <p
-                    className="text-lg text-[#806D55] sm:hidden"
+                    className="text-lg font-medium text-[#60482F] sm:hidden"
                     style={{ fontFamily: '"Bodoni Moda", Georgia, serif' }}
                   >
                     {evento.hora}
                   </p>
 
                   <h3
-                    className="mt-2 text-[1.65rem] leading-snug sm:mt-0 sm:text-[1.9rem]"
+                    className="mt-2 text-[1.65rem] leading-snug text-[#171512] sm:mt-0 sm:text-[1.9rem]"
                     style={{ fontFamily: '"Bodoni Moda", Georgia, serif' }}
                   >
                     {evento.titulo}
                   </h3>
 
                   {evento.lugar && (
-                    <p className="mt-2 text-lg italic text-[#806D55]">
+                    <p className="mt-2 text-lg italic text-[#60482F]">
                       {evento.lugar}
                     </p>
                   )}
 
                   <p
-                    className="mt-3 text-lg leading-relaxed text-[#625A50] sm:text-xl"
+                    className="mt-3 text-lg leading-relaxed text-[#302C27] sm:text-xl"
                     style={{ fontFamily: '"EB Garamond", Georgia, serif' }}
                   >
                     {evento.descripcion}
@@ -143,19 +146,19 @@ const Itinerario2 = () => {
           className="mx-auto mt-20 max-w-xl text-center"
         >
           <div
-            className="mx-auto mb-8 h-px w-20 bg-[#BDA889]"
+            className="mx-auto mb-8 h-px w-20 bg-[#60482F]"
             aria-hidden="true"
           />
 
           <h3
-            className="text-2xl sm:text-3xl"
+            className="text-2xl text-[#171512] sm:text-3xl"
             style={{ fontFamily: '"Bodoni Moda", Georgia, serif' }}
           >
             🤍 Gracias por celebrar con nosotros
           </h3>
 
           <p
-            className="mt-5 text-xl leading-relaxed text-[#625A50] sm:text-2xl"
+            className="mt-5 text-xl leading-relaxed text-[#302C27] sm:text-2xl"
             style={{ fontFamily: '"EB Garamond", Georgia, serif' }}
           >
             Porque los momentos más importantes de la vida se vuelven aún más

@@ -45,53 +45,52 @@ export default function ConfirmacionAsistencia() {
 
     const enlace = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`;
 
-    // Se abre desde el clic del invitado para evitar bloqueos del navegador.
     window.open(enlace, "_blank", "noopener,noreferrer");
   };
 
   return (
     <section
       id="confirmacion"
-      className="w-full bg-[#F8F3EA] px-5 py-20 text-[#302C27] sm:px-8 sm:py-28"
+      className="w-full bg-[#F5EDE1] px-5 py-20 text-[#171512] sm:px-8 sm:py-28"
     >
       <motion.div
         initial={{ opacity: 0, y: 25 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8 }}
-        className="relative mx-auto max-w-2xl border border-[#D8C7AD] bg-[#FFFCF7] px-6 py-14 text-center shadow-[0_18px_55px_rgba(70,55,37,0.07)] sm:px-12 sm:py-16"
+        className="relative mx-auto max-w-2xl border border-[#846B4F] bg-[#FFFEFB] px-6 py-14 text-center shadow-[0_18px_55px_rgba(70,55,37,0.12)] sm:px-12 sm:py-16"
       >
         <div
-          className="pointer-events-none absolute inset-3 border border-[#E9DDCC]"
+          className="pointer-events-none absolute inset-3 border border-[#A88C68]"
           aria-hidden="true"
         />
 
         <div className="relative z-10">
-          <p className="text-[11px] uppercase tracking-[0.25em] text-[#806D55]">
+          <p className="text-[11px] uppercase tracking-[0.25em] text-[#60482F]">
             R · S · V · P
           </p>
 
           <h2
-            className="mt-5 text-[clamp(2.4rem,8vw,4rem)] leading-tight tracking-[-0.05em]"
+            className="mt-5 text-[clamp(2.4rem,8vw,4rem)] leading-tight tracking-[-0.05em] text-[#171512]"
             style={{ fontFamily: '"Bodoni Moda", Georgia, serif' }}
           >
             Confirma tu asistencia
           </h2>
 
           <div
-            className="mx-auto my-7 h-px w-20 bg-[#BDA889]"
+            className="mx-auto my-7 h-px w-20 bg-[#60482F]"
             aria-hidden="true"
           />
 
           <p
-            className="mx-auto max-w-md text-xl leading-relaxed text-[#625A50] sm:text-2xl"
+            className="mx-auto max-w-md text-xl leading-relaxed text-[#302C27] sm:text-2xl"
             style={{ fontFamily: '"EB Garamond", Georgia, serif' }}
           >
             Nos encantará saber si podremos contar contigo para compartir este
             día tan especial.
           </p>
 
-          <p className="mt-5 text-xl text-[#806D55]">
+          <p className="mt-5 text-xl font-medium text-[#60482F]">
             Confirma antes del 15 de octubre de 2026.
           </p>
 
@@ -99,7 +98,7 @@ export default function ConfirmacionAsistencia() {
             <div>
               <label
                 htmlFor="nombre-invitado"
-                className="mb-2 block text-xs uppercase tracking-[0.15em] text-[#625A50]"
+                className="mb-2 block text-xs uppercase tracking-[0.15em] text-[#302C27]"
               >
                 Nombre y apellido
               </label>
@@ -110,12 +109,12 @@ export default function ConfirmacionAsistencia() {
                 value={nombre}
                 onChange={(e) => setNombre(e.target.value)}
                 placeholder="Escribe tu nombre"
-                className="w-full border border-[#D8C7AD] bg-[#F8F3EA] px-4 py-3.5 text-[#302C27] outline-none placeholder:text-[#897F72] focus:border-[#806D55]"
+                className="w-full border border-[#846B4F] bg-[#FFFEFB] px-4 py-3.5 text-[#171512] outline-none placeholder:text-[#625A50] focus:border-[#60482F] focus:ring-1 focus:ring-[#60482F]"
               />
             </div>
 
             <fieldset>
-              <legend className="mb-2 text-xs uppercase tracking-[0.15em] text-[#625A50]">
+              <legend className="mb-2 text-xs uppercase tracking-[0.15em] text-[#302C27]">
                 ¿Podrás acompañarnos?
               </legend>
 
@@ -131,8 +130,8 @@ export default function ConfirmacionAsistencia() {
                     aria-pressed={asistencia === opcion}
                     className={`min-h-12 border px-2 py-3 text-sm transition-colors sm:text-base ${
                       asistencia === opcion
-                        ? "border-[#806D55] bg-[#806D55] text-white"
-                        : "border-[#D8C7AD] bg-[#F8F3EA] text-[#302C27] hover:border-[#806D55]"
+                        ? "border-[#60482F] bg-[#60482F] text-white"
+                        : "border-[#846B4F] bg-[#F5EDE1] text-[#171512] hover:bg-[#E8D9C4]"
                     }`}
                   >
                     {opcion}
@@ -145,7 +144,7 @@ export default function ConfirmacionAsistencia() {
               <div>
                 <label
                   htmlFor="numero-invitados"
-                  className="mb-2 block text-xs uppercase tracking-[0.15em] text-[#625A50]"
+                  className="mb-2 block text-xs uppercase tracking-[0.15em] text-[#302C27]"
                 >
                   Número de personas
                 </label>
@@ -158,7 +157,7 @@ export default function ConfirmacionAsistencia() {
                   value={invitados}
                   onChange={(e) => setInvitados(e.target.value)}
                   placeholder="Incluyéndote a ti"
-                  className="w-full border border-[#D8C7AD] bg-[#F8F3EA] px-4 py-3.5 text-[#302C27] outline-none placeholder:text-[#897F72] focus:border-[#806D55]"
+                  className="w-full border border-[#846B4F] bg-[#FFFEFB] px-4 py-3.5 text-[#171512] outline-none placeholder:text-[#625A50] focus:border-[#60482F] focus:ring-1 focus:ring-[#60482F]"
                 />
               </div>
             )}
@@ -166,7 +165,7 @@ export default function ConfirmacionAsistencia() {
             <div>
               <label
                 htmlFor="mensaje-invitado"
-                className="mb-2 block text-xs uppercase tracking-[0.15em] text-[#625A50]"
+                className="mb-2 block text-xs uppercase tracking-[0.15em] text-[#302C27]"
               >
                 Mensaje opcional
               </label>
@@ -176,24 +175,24 @@ export default function ConfirmacionAsistencia() {
                 onChange={(e) => setMensaje(e.target.value)}
                 rows={4}
                 placeholder="Déjanos un mensaje"
-                className="w-full resize-none border border-[#D8C7AD] bg-[#F8F3EA] px-4 py-3.5 text-[#302C27] outline-none placeholder:text-[#897F72] focus:border-[#806D55]"
+                className="w-full resize-none border border-[#846B4F] bg-[#FFFEFB] px-4 py-3.5 text-[#171512] outline-none placeholder:text-[#625A50] focus:border-[#60482F] focus:ring-1 focus:ring-[#60482F]"
               />
             </div>
 
             {error && (
-              <p role="alert" className="text-sm text-[#9B3F3F]">
+              <p role="alert" className="text-sm font-medium text-[#9B3F3F]">
                 {error}
               </p>
             )}
 
             <button
               type="submit"
-              className="w-full bg-[#806D55] px-5 py-4 text-xs uppercase tracking-[0.15em] text-white transition-colors hover:bg-[#675640] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#806D55]"
+              className="w-full bg-[#60482F] px-5 py-4 text-xs uppercase tracking-[0.15em] text-white transition-colors hover:bg-[#44311F] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#60482F]"
             >
               Continuar en WhatsApp
             </button>
 
-            <p className="text-center text-sm text-[#806D55]">
+            <p className="text-center text-sm text-[#302C27]">
               Al abrir WhatsApp, pulsa Enviar para completar tu confirmación.
             </p>
           </form>

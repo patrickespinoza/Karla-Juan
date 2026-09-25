@@ -6,43 +6,47 @@ export default function Portada() {
       className="relative flex min-h-screen w-full items-center justify-center overflow-hidden px-6 py-16 text-center"
       style={{
         background:
-          "radial-gradient(circle at 50% 35%, #FFFDF9 0%, #F8F3EA 55%, #EEE3D3 100%)",
-        color: "#302C27",
+          "radial-gradient(circle at 50% 38%, #FFFEFB 0%, #F5EDE1 65%, #E5D2B9 100%)",
+        color: "#171512",
       }}
     >
-      {/* Marcos delicados */}
+      {/* Marcos decorativos */}
       <div
         className="pointer-events-none absolute inset-4 border sm:inset-7"
-        style={{ borderColor: "#D8C7AD" }}
+        style={{ borderColor: "#846B4F" }}
+        aria-hidden="true"
       />
       <div
         className="pointer-events-none absolute inset-7 border sm:inset-10"
-        style={{ borderColor: "rgba(216, 199, 173, 0.45)" }}
+        style={{ borderColor: "rgba(92, 69, 46, 0.65)" }}
+        aria-hidden="true"
       />
 
       <div className="relative z-10 flex w-full max-w-2xl flex-col items-center">
         <h1
-          className="text-[clamp(3.1rem,11vw,6.5rem)] leading-[1.12] tracking-[-0.055em]"
+          className="w-full text-[clamp(2.7rem,10vw,6.2rem)] leading-[1.2] tracking-[-0.055em]"
           style={{ fontFamily: '"Bodoni Moda", Georgia, serif' }}
         >
-          Karla Roset
+          <span className="block italic">Karla Roset</span>
+
           <span
             className="my-2 block text-[0.65em] italic"
-            style={{ color: "#AA9578" }}
+            style={{ color: "#60482F" }}
           >
             &
           </span>
-          Juan Alejandro
+
+          <span className="block italic">Juan Alejandro</span>
         </h1>
 
         <div
-          className="my-9 h-px w-20 sm:my-12"
-          style={{ backgroundColor: "#BDA889" }}
+          className="my-9 h-px w-24 sm:my-12"
+          style={{ backgroundColor: "#60482F" }}
           aria-hidden="true"
         />
 
         <p
-          className="text-lg tracking-[0.15em] sm:text-2xl"
+          className="text-base font-semibold tracking-[0.12em] sm:text-2xl sm:tracking-[0.16em]"
           style={{ fontFamily: '"EB Garamond", Georgia, serif' }}
         >
           05 DE DICIEMBRE DE 2026
