@@ -2,59 +2,58 @@ import React from "react";
 
 export default function Portada() {
   return (
-    <section
-      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden px-6 py-16 text-center"
-      style={{
-        background:
-          "radial-gradient(circle at 50% 38%, #FFFEFB 0%, #F5EDE1 65%, #E5D2B9 100%)",
-        color: "#171512",
-      }}
-    >
-      {/* Marcos decorativos */}
-      <div
-        className="pointer-events-none absolute inset-4 border sm:inset-7"
-        style={{ borderColor: "#846B4F" }}
-        aria-hidden="true"
+    <section className="relative w-full h-screen overflow-hidden">
+
+      {/* FOTO */}
+      <img
+        src="/portada.png"
+        alt="Allison y David"
+        className="absolute inset-0 w-full h-full object-cover object-[45%_35%]"
       />
 
-      <div
-        className="pointer-events-none absolute inset-7 border sm:inset-10"
-        style={{ borderColor: "rgba(92, 69, 46, 0.65)" }}
-        aria-hidden="true"
-      />
+      {/* Degradado para mejorar lectura */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/15 to-transparent"></div>
 
-      <div className="relative z-10 flex w-full max-w-3xl flex-col items-center">
+      {/* Contenido */}
+      <div className="relative z-10 h-full flex flex-col justify-end items-center text-center px-6 pb-24">
+
+        <p className="uppercase tracking-[0.45em] text-white/90 text-sm sm:text-base font-playfair mb-6">
+          Nos Casamos
+        </p>
+
         <h1
-          className="w-full text-[clamp(3.4rem,12vw,7.5rem)] font-normal leading-[1.25]"
-          style={{
-            fontFamily: '"Great Vibes", cursive',
-            color: "#171512",
-          }}
+          className="
+            font-cursiveDancing
+            text-white
+            text-5xl
+            sm:text-7xl
+            md:text-8xl
+            lg:text-[7rem]
+            leading-none
+            drop-shadow-2xl
+          "
         >
-          <span className="block">Karla Roset</span>
-
-          <span
-            className="my-1 block text-[0.72em]"
-            style={{ color: "#60482F" }}
-          >
-            &
-          </span>
-
-          <span className="block">Juan Alejandro</span>
+          Karla Roset & Juan Alejandro
         </h1>
 
-        <div
-          className="my-9 h-px w-24 sm:my-12"
-          style={{ backgroundColor: "#60482F" }}
-          aria-hidden="true"
-        />
+        <div className="w-24 h-px bg-white/70 my-8"></div>
 
-        <p
-          className="text-base font-semibold tracking-[0.12em] sm:text-2xl sm:tracking-[0.16em]"
-          style={{ fontFamily: '"EB Garamond", Georgia, serif' }}
+        <div
+          className="
+            px-8
+            py-3
+            rounded-full
+            bg-white/15
+            backdrop-blur-lg
+            border
+            border-white/20
+          "
         >
-          05 DE DICIEMBRE DE 2026
-        </p>
+          <p className="font-playfair text-white text-lg sm:text-xl tracking-[0.2em] uppercase">
+            05 · Diciembre · 2026
+          </p>
+        </div>
+
       </div>
     </section>
   );
