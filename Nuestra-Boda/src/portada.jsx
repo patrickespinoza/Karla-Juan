@@ -6,7 +6,7 @@ export default function Portada() {
 
       {/* FOTO */}
       <img
-        src="/portada.png"
+        src="/vista-previa.jpg"
         alt="Allison y David"
         className="absolute inset-0 w-full h-full object-cover object-[45%_35%]"
       />
