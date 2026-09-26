@@ -5,7 +5,7 @@ export default function Portada() {
     <section className="relative h-screen min-h-[600px] w-full overflow-hidden">
       {/* Fotografía */}
       <img
-        src="/foto-original-cuadrada.jpg"
+        src="/vista.jpg"
         alt="Karla Roset y Juan Alejandro"
         className="absolute inset-0 h-full w-full object-cover object-[30%_35%]"
       />
